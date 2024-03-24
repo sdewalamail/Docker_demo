@@ -9,11 +9,11 @@ docker run -p 8080:8080 -d --name node-app node-app-image
 # To sync changes to container
 # For Command Prompt (Windows)
 docker run -v %cd%\filePathToYourLocalMechine:/FileLocationForContainerLocation:ro -p 8080:8080 -d --name node-app node-app-image
-expmle: docker run -v %cd%:/app:ro -p 8080:8080 -d --name node-app node-app-image
+expmle: docker run -v %cd%:/app:ro --env-file ./.env -p 8080:8080 -d --name node-app node-app-image
 
 # For PowerShell (Windows)
 docker run -v ${PWD}/filePathToYourLocalMechine:/FileLocationForContainerLocation -p 8080:8080 -d --name node-app node-app-image
-example: docker run -v ${PWD}:/app:ro -p 8080:8080 -d --name node-app node-app-image
+example: docker run -v ${PWD}:/app:ro --env-file ./.env -p 8080:8080 -d --name node-app node-app-image
 
 
 # For Linux and macOS
