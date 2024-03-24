@@ -9,7 +9,7 @@ docker run -p 8080:8080 -d --name node-app node-app-image
 # To sync changes to container
 # For Command Prompt (Windows)
 docker run -v %cd%\filePathToYourLocalMechine:/FileLocationForContainerLocation:ro -p 8080:8080 -d --name node-app node-app-image
-expmle: docker run -v %cd%:/app:ro --env-file ./.env -p 8080:8080 -d --name node-app node-app-image
+expmle: docker run -v %cd%:/app:ro --env-file ./.env -p 8080:8000 -d --name node-app node-app-image
 
 # For PowerShell (Windows)
 docker run -v ${PWD}/filePathToYourLocalMechine:/FileLocationForContainerLocation -p 8080:8080 -d --name node-app node-app-image
@@ -31,3 +31,11 @@ docker rm node-app -f
 # Execute an interactive bash shell within the 'node-app' container (-it flags for interactive mode and allocating a pseudo-TTY)
 docker exec -it node-app bash
 
+# List Docker volumes
+docker volume ls
+
+# Prune unused Docker volumes
+docker volume prune
+
+# Remove a Docker container
+docker rm <container-name_or_id> -fv
