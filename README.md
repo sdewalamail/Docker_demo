@@ -14,3 +14,7 @@ docker stop node-app
 
 # Remove the 'node-app' container forcefully (-f flag for force)
 docker rm node-app -f
+
+# Execute an interactive bash shell within the 'node-app' container (-it flags for interactive mode and allocating a pseudo-TTY)
+docker exec -it node-app bash
+
