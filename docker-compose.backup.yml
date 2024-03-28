@@ -1,0 +1,16 @@
+version: '3.8'
+services:
+  node-app: 
+    image: node-app-image
+    build:
+      context: .
+      dockerfile: Dockerfile
+    ports:
+      - 8080:8000
+    volumes:
+      - ./:/app
+      - /app/node_modules
+    environment:
+      - PORT=8000
+    # env-file:
+    #   - ./.env

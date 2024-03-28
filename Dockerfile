@@ -8,7 +8,7 @@ WORKDIR /app
 COPY package*.json ./
 
 # Install Node.js dependencies
-RUN npm install
+RUN npm install --only=production
 
 # Copy the rest of the application code to the working directory
 COPY . ./
@@ -18,4 +18,4 @@ ENV PORT 8080
 EXPOSE $PORT
 
 # Define the command to run your app
-CMD ["npm", "run", "dev"]
+CMD ["node", "index.js"]

@@ -39,3 +39,27 @@ docker volume prune
 
 # Remove a Docker container
 docker rm <container-name_or_id> -fv
+
+# docker compose 
+docker-compose up -d
+# againg want to build brand new image
+docker-compose up -d --build 
+
+docker-compose down -v
+
+    docker-compose -f docker-compose.yml -f docker-compose.backup.yml up -d
+    docker-compose -f docker-compose.yml -f docker-compose.dev.yml down 
+
+
+# Stop and remove all running containers
+docker stop $(docker ps -aq)
+docker rm $(docker ps -aq)
+
+# Remove all images
+docker rmi $(docker images -aq)
+
+# Remove all volumes
+docker volume prune
+
+# Remove all networks
+docker network prune
