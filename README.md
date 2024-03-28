@@ -62,4 +62,7 @@ docker rmi $(docker images -aq)
 docker volume prune
 
 # Remove all networks
-docker network prune
+docker volume prune
+
+mongo is replace by mnogsh
+
